@@ -2,14 +2,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RestaurantManager.UniversalWindows"
+    xmlns:extensions="using:RestaurantManager.Extensions"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    
+
     <Page.Resources>
         <ControlTemplate x:Key="ButtonTemplate" TargetType="Button">
             <ContentPresenter CornerRadius="20" Background="{TemplateBinding Background}"  BorderBrush="{TemplateBinding Background}" BorderThickness="10"  />
         </ControlTemplate>
+        <x:String x:Key="RightTappedMessage">Thank you for trying out my demo. Here is a Smile :)</x:String>
+        <x:String x:Key="TitleDialog">Thank you !</x:String>
     </Page.Resources>
+
+    <i:Interaction.Behaviors>
+        <extensions:RightClickMessageDialogBehaviour Message="{StaticResource RightTappedMessage}" Title="{StaticResource TitleDialog}" />
+    </i:Interaction.Behaviors>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.40*" />
