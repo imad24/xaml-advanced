@@ -2,7 +2,7 @@
 
 namespace RestaurantManager.Models
 {
-    public class OrderDataManager : DataManager
+    public class OrderDataManger : DataManager
     {
         private List<MenuItem> _menuItems, _currentlySelectedMenuItems;
 
